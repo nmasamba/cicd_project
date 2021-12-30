@@ -95,8 +95,8 @@ jobs:
             cd frontend
             npm install
             if npm audit --audit-level=critical
-            then return 0
-            else return 1
+            then exit 0
+            else exit 1
             fi
       - save_cache:
           paths: [frontend/node_modules]
@@ -118,8 +118,8 @@ jobs:
             cd backend
             npm install
             if npm audit --audit-level=critical
-            then return 0
-            else return 1
+            then exit 0
+            else exit 1
             fi
       - save_cache:
           paths: [backend/node_modules]
