@@ -95,6 +95,7 @@ jobs:
             cd frontend
             npm instalL
             npm audit fix --audit-level=critical --force
+            npm audit fix --force
             if npm audit --audit-level=critical
             then exit 0
             else exit 1
