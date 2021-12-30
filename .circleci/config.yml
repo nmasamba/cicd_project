@@ -47,17 +47,17 @@ jobs:
       - checkout
       # Restore from cache
       - restore_cache:
-        keys: [frontend-test]
+          keys: [frontend-test]
       # Your job code here
       - run:
-        name: Test front end
-        command: |
-          cd frontend
-          npm install
-          npm run test
+          name: Test front end
+          command: |
+            cd frontend
+            npm install
+            npm run test
       - save_cache:
-        paths: [backend/node_modules]
-        key: frontend-test
+          paths: [backend/node_modules]
+          key: frontend-test
 
   test-backend:
     docker:
@@ -67,17 +67,17 @@ jobs:
       - checkout
       # Restore from cache
       - restore_cache:
-        keys: [backend-test]
+          keys: [backend-test]
       # Your job code here
       - run:
-        name: Test back end
-        command: |
-          cd backend
-          npm install
-          npm run test
+          name: Test back end
+          command: |
+            cd backend
+            npm install
+            npm run test
       - save_cache:
-        paths: [backend/node_modules]
-        key: backend-test
+          paths: [backend/node_modules]
+          key: backend-test
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
